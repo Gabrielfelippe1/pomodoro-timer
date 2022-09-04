@@ -16,11 +16,11 @@ export function Countdown() {
   useEffect(() => {
     let interval: number
     if (activeCycle) {
-      const secondsDifference = differenceInSeconds(
-        new Date(),
-        activeCycle.startDate,
-      )
       interval = setInterval(() => {
+        const secondsDifference = differenceInSeconds(
+          new Date(),
+          activeCycle.startDate,
+        )
         if (secondsDifference >= totalSeconds) {
           markCurrentCycleAsFinished()
           setSecondsPassed(totalSeconds)
